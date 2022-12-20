@@ -33,7 +33,7 @@ class ViewController: UIViewController {
                 return false
             }
             
-            if login == "Guest" && password == "123321" {
+            if login == "" && password == "" {
                 return true
             } else {
                 return false
