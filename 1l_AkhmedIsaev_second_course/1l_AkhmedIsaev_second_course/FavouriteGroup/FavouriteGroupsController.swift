@@ -13,40 +13,32 @@ class FavouriteGroupsController: UITableViewController {
     var groups = [
         
         Group(image: UIImage.init(named: "university_logo"), name: "University"),
-        Group(image: UIImage.init(named: "sport_icon"), name: "Sport"),
-        Group(image: UIImage.init(named: "english_icon"), name: "English"),
-        Group(image: UIImage.init(named: "family_icon"), name: "Family"),
-        Group(image: UIImage.init(named: "job_icon"), name: "Job"),
-        Group(image: UIImage.init(named: "movie_icon"), name: "Movie")
+        Group(image: UIImage.init(named: "sport_icon"), name: "Sport")
     ]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return groups.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Получаем ячейку из пула
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableViewCell", for: indexPath) as? GroupTableViewCell else {
             preconditionFailure("Error groups!")
         }
@@ -56,11 +48,30 @@ class FavouriteGroupsController: UITableViewController {
         
         print(indexPath.section)
         print(indexPath.row)
-
+        
         // Configure the cell...
-
+        
         return cell
+        
     }
+    
+    
+    @IBAction func addNewGroup(segue: UIStoryboardSegue) {
+        // Откуда мы пришли. Источник откуда мы хотим перейти.
+        // Проверям сегу из которой мы пришли. Если эта сега равна AllGroupsController
+        if let sourceVC = segue.source as? AllGroupsController,
+           // Проверяем indexPath на который мы нажали. Нажатая ячейка
+           let indexPath = sourceVC.tableView.indexPathForSelectedRow {
+            let group = sourceVC.allGroups[indexPath.row] // По этой ячейке, берем группу из массива allGroups
+            
+            if !groups.contains(where: {$0.name == group.name}) { // Если в массиве groups уже содержится искомая группа, то добавлять ее мы не будем. $0.name проверяем имя из массива groups. Проверяем group.name который нам передают из прешедшего viewController и если вся эта конструкция вернет true, то мы отрицаем это и не выполняем блок кода внутри.
+                
+                groups.append(group) // Передаем группу в массив groups
+                tableView.reloadData() // После добавления группы в контроллер Favouritegroup, обновляем контроллер.
+            }
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -70,17 +81,17 @@ class FavouriteGroupsController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
+    
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
             // Delete the row from the data source
+            groups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.

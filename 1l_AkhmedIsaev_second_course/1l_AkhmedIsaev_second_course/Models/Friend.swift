@@ -7,12 +7,8 @@
 
 import UIKit
 
-class friend {
+struct friend {
     let name: String
-    let image: UIImage?
-    
-    init(name: String, image: UIImage? = nil) {
-        self.name = name
-        self.image = image
-    }
+    let avatar: UIImage?
+    let photos: [UIImage?]
 }

@@ -66,6 +66,42 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D0642FE6295D1762008FDEDC /* FavouriteGroup */ = {
+			isa = PBXGroup;
+			children = (
+				D0642FA029516483008FDEDC /* GroupTableViewCell.swift */,
+				D0642F9E29516273008FDEDC /* FavouriteGroupsController.swift */,
+			);
+			path = FavouriteGroup;
+			sourceTree = "<group>";
+		};
+		D0642FE7295D17E9008FDEDC /* GlobalGroups */ = {
+			isa = PBXGroup;
+			children = (
+				D0642FA2295169AA008FDEDC /* AllGroupsController.swift */,
+				D0642FA629518943008FDEDC /* AllGroupsCell.swift */,
+			);
+			path = GlobalGroups;
+			sourceTree = "<group>";
+		};
+		D0642FE8295D1827008FDEDC /* FavouriteFriends */ = {
+			isa = PBXGroup;
+			children = (
+				D0642FB22951964A008FDEDC /* FriendTableViewCell.swift */,
+				D0642FAE295193D9008FDEDC /* FavouriteFriendsController.swift */,
+			);
+			path = FavouriteFriends;
+			sourceTree = "<group>";
+		};
+		D0642FE9295D186D008FDEDC /* PictureFriendCollection */ = {
+			isa = PBXGroup;
+			children = (
+				D0642FB629519B03008FDEDC /* FriendCollectionViewCell.swift */,
+				D0642FB429519AB9008FDEDC /* FriendsCollection.swift */,
+			);
+			path = PictureFriendCollection;
+			sourceTree = "<group>";
+		};
 		D06D8B06294A050100913140 = {
 			isa = PBXGroup;
 			children = (
@@ -85,22 +121,18 @@
 		D06D8B11294A050200913140 /* 1l_AkhmedIsaev_second_course */ = {
 			isa = PBXGroup;
 			children = (
-				D0642FAE295193D9008FDEDC /* FavouriteFriendsController.swift */,
+				D0642FE9295D186D008FDEDC /* PictureFriendCollection */,
+				D0642FE8295D1827008FDEDC /* FavouriteFriends */,
+				D0642FE7295D17E9008FDEDC /* GlobalGroups */,
+				D0642FE6295D1762008FDEDC /* FavouriteGroup */,
 				D06D8B12294A050200913140 /* AppDelegate.swift */,
-				D0642F9E29516273008FDEDC /* FavouriteGroupsController.swift */,
 				D06D8B14294A050200913140 /* SceneDelegate.swift */,
 				D06D8B16294A050200913140 /* ViewController.swift */,
 				D06D8B18294A050200913140 /* Main.storyboard */,
 				D06D8B1B294A050800913140 /* Assets.xcassets */,
 				D06D8B1D294A050800913140 /* LaunchScreen.storyboard */,
-				D0642FA029516483008FDEDC /* GroupTableViewCell.swift */,
-				D0642FA2295169AA008FDEDC /* AllGroupsController.swift */,
 				D06D8B20294A050800913140 /* Info.plist */,
-				D0642FA629518943008FDEDC /* AllGroupsCell.swift */,
 				D0642FAD2951937A008FDEDC /* Models */,
-				D0642FB22951964A008FDEDC /* FriendTableViewCell.swift */,
-				D0642FB429519AB9008FDEDC /* FriendsCollection.swift */,
-				D0642FB629519B03008FDEDC /* FriendCollectionViewCell.swift */,
 			);
 			path = 1l_AkhmedIsaev_second_course;
 			sourceTree = "<group>";

@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+// private let reuseIdentifier = "Cell"
 
 class FriendsCollection: UICollectionViewController {
 
@@ -18,7 +18,7 @@ class FriendsCollection: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+       // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +41,7 @@ class FriendsCollection: UICollectionViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
     
 
 
